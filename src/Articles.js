@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Article from './Article';
 
-class MainContainer extends Component {
+class Articles extends Component {
    render(){
       let diagnoses = this.props.diagnoses.map((item, index) => {
         return <Article key={item.id} item={item} />
@@ -28,4 +28,4 @@ function mapStateToProps(state){
       diagnoses: state.diagnoses
     }
 }
-export default connect(mapStateToProps)(MainContainer);
+export default connect(mapStateToProps)(Articles);

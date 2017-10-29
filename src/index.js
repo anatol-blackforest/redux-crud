@@ -8,7 +8,6 @@ import App from './App';
 import initialState from './data/data';
 
 const reducer = function(state = initialState, action){
-  console.log(action.type)
   if(action.type === "OPEN_TRIGGER"){
      return{
        ...state,
@@ -52,6 +51,21 @@ const reducer = function(state = initialState, action){
        ...state,
         diagnoses: newState
      }
+  }else if(action.type === "EDIT_ARTICLE"){
+     action.payload.e.preventDefault()
+     let newState = [...state.diagnoses];
+     newState = newState.map((item, index) => {
+       let newItem = {...item}
+       if(item.id === Number(action.payload.id)){
+         newItem.description = action.payload.description;
+         return newItem;
+       }
+       return newItem
+     });
+     return{
+        ...state,
+        diagnoses: newState
+     }
   }
   return {
     diagnoses: state,
@@ -64,6 +78,7 @@ const reducer = function(state = initialState, action){
   }
   
 };
+
 const store = createStore(reducer);
 
 ReactDOM.render(<Provider store={store}>

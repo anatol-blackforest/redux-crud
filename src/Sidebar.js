@@ -7,8 +7,8 @@ class Sidebar extends Component {
        this.editHandler = this.editHandler.bind(this);
        this.openTrigger = this.openTrigger.bind(this);
    }
-   editHandler(){
-       this.props.editHandler(this.id.value, this.description.value)
+   editHandler(e){
+       this.props.editHandler(e, this.id.value, this.description.value)
    }
    openTrigger(){
        this.props.openTrigger()
@@ -51,8 +51,8 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch){
     return{
-        editHandler: (id, description) => {
-            dispatch({type:"EDIT_ARTICLE", payload: {id, description}})
+        editHandler: (e, id, description) => {
+            dispatch({type:"EDIT_ARTICLE", payload: {e, id, description}})
         },   
         openTrigger: () => {
             dispatch({type:"OPEN_TRIGGER", payload: ""})

@@ -21,14 +21,10 @@ class Article extends Component {
           </td>
           <td onClick={() => this.articleHandler(id)}>{this.props.item.description}</td>
           <td>-</td>
-          <td><a onClick={() => this.deleteHandler(id)} className="close" href="#"></a></td>
+          <td><a onClick={() => this.deleteHandler(id)} className="close" ></a></td>
       </tr>
    }
 }
-
-// function mapStateToProps(state) {
-//   return {}
-// }
 
 function mapDispatchToProps(dispatch){
   return{
