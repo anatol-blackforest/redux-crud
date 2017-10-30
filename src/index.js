@@ -52,7 +52,6 @@ const reducer = function(state = initialState, action){
         diagnoses: newState
      }
   }else if(action.type === "EDIT_ARTICLE"){
-     action.payload.e.preventDefault()
      let newState = [...state.diagnoses];
      newState = newState.map((item, index) => {
        let newItem = {...item}
@@ -64,7 +63,24 @@ const reducer = function(state = initialState, action){
      });
      return{
         ...state,
-        diagnoses: newState
+        diagnoses: newState,
+        currentDiagnose: {
+          ...state.currentDiagnose,
+          description: action.payload.description,
+          prepareToEdit: false
+        }
+     }
+  }else if(action.type === "ADD_ARTICLE"){
+     return{
+       ...state,
+        diagnoses:[
+            ...state.diagnoses,
+            {
+                "id": Date.now(),
+                "diagnosis": action.payload.diagnosis,
+                "description": action.payload.description
+            }
+        ]
      }
   }
   return {

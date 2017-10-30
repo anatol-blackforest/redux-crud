@@ -21,7 +21,7 @@ class Article extends Component {
           </td>
           <td onClick={() => this.articleHandler(id)}>{this.props.item.description}</td>
           <td>-</td>
-          <td><a onClick={() => this.deleteHandler(id)} className="close" ></a></td>
+          <td><a onClick={() => this.deleteHandler(id)} className="close" >x</a></td>
       </tr>
    }
 }

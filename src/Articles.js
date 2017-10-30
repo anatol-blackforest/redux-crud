@@ -10,9 +10,9 @@ class Articles extends Component {
        return <table className="demo">
             <thead>
                 <tr>
-                    <th>Code</th>
                     <th>Diagnosis</th>
-                    <th className="addit">Addition Date</th>
+                    <th>Description</th>
+                    <th></th>
                     <th></th>
                 </tr>
             </thead>
