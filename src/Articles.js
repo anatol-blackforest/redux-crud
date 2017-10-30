@@ -4,9 +4,13 @@ import Article from './Article';
 
 class Articles extends Component {
    render(){
-      let diagnoses = this.props.diagnoses.map((item, index) => {
-        return <Article key={item.id} item={item} />
-      })
+      let diagnoses;
+      if(this.props.filteredDiagnoses.length){
+        diagnoses = this.props.filteredDiagnoses.map((item, index) => <Article key={item.id} item={item} />);
+      }else{
+        diagnoses = this.props.diagnoses.map((item, index) => <Article key={item.id} item={item} />);
+      }
+
        return <table className="demo">
             <thead>
                 <tr>
@@ -25,7 +29,8 @@ class Articles extends Component {
 
 function mapStateToProps(state){
     return{
-      diagnoses: state.diagnoses
+      diagnoses: state.diagnoses,
+      filteredDiagnoses: state.filteredDiagnoses
     }
 }
 export default connect(mapStateToProps)(Articles);

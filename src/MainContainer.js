@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Articles from './Articles';
+import Search from './Search';
 
 class MainContainer extends Component {
    render(){
@@ -12,12 +13,8 @@ class MainContainer extends Component {
               <div className="row header">
                 <h2>Current Diagnoses:</h2>
               </div>
-            <div className="row adder">
-              <form>
-                   <input type="text" defaultValue="Add Diagnoses" /><button></button>
-               </form>
-              </div>
-            
+
+              <Search />
               <Articles />
             
           </div>

@@ -1,0 +1,32 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class Search extends Component{
+    constructor(props){
+        super(props);
+        this.searchHandler = this.searchHandler.bind(this);
+    }
+    searchHandler(){
+        this.props.searchHandler(this.search.value);
+    }
+    render(){
+        return <div className="row adder">
+            <form>
+                <input ref={search=> this.search = search} onChange={this.searchHandler} type="text" placeholder="Search Diagnoses" /><button></button>
+            </form>
+        </div>
+    }
+}
+function mapStateToProps(state){
+    return{
+
+    }
+}
+function mapDispachToProps(dispatch){
+    return{
+        searchHandler: (searchValue) => {
+            dispatch({type:"SEARCH_DIAGNOSIS", payload: searchValue})
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispachToProps)(Search)
