@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Articles from './Articles';
 import Search from './Search';
-
+//центральная панель
 class MainContainer extends Component {
    render(){
        return <div className="container">

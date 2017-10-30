@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Article from './Article';
-
+//выводим все диагнозы в главной панели
 class Articles extends Component {
    render(){
       let diagnoses;

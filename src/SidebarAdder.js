@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'
-
+//добавляем новый диагноз из боковой панели
 class SidebarEditor extends Component {
    constructor(props){
        super(props);

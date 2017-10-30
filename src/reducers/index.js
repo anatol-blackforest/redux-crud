@@ -1,25 +1,7 @@
-// import { combineReducers } from 'redux'
-import initialState from '../data/data';
+import { combineReducers } from 'redux'
+import data from '../data/data';
 
-// import openTrigger from './openTrigger';
-// import searchDiagnosis from './searchDiagnosis';
-// import displayArticle from './displayArticle';
-// import deleteArticle from './deleteArticle';
-// import editArticle from './editArticle';
-// import addArticle from './addArticle';
-// import defaultReducer from './default';
-
-// export default combineReducers({
-//   openTrigger,
-//   searchDiagnosis,
-//   displayArticle,
-//   deleteArticle,
-//   editArticle,
-//   addArticle,
-//   defaultReducer
-// });
-
-export default function Reducers(state = initialState, action){
+export default function Reducers(state = data, action){
     
   if(action.type === "OPEN_TRIGGER"){
      return{

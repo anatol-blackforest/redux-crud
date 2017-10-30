@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+//поиск диагноза (центральная панель)
 class Search extends Component{
     constructor(props){
         super(props);

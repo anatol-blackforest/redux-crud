@@ -1,18 +1,20 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'
-
+//редактируем диагноз в боковой панели
 class SidebarEditor extends Component {
    constructor(props){
        super(props);
        this.editHandler = this.editHandler.bind(this);
        this.openTrigger = this.openTrigger.bind(this);
    }
+   //редактируем запись в боковой панели
    editHandler(e){
        e.preventDefault();
        if(this.description.value){
            this.props.editHandler(this.id.value, this.description.value);
        }
    }
+   //открываем-закрываем форму редактирования
    openTrigger(){
        this.props.openTrigger()
    }
