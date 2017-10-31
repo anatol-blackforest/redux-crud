@@ -32,7 +32,7 @@ export default function articlesReducer(state = initialState, action){
     //отображение подробного диагноза в боковой панели
     case "DISPLAY_DIAGNOSIS": {
        let diagnose;
-       state.diagnoses.map((item) => {
+       state.diagnoses.forEach((item) => {
          if (item.id === action.payload){
              diagnose = item;
          }
