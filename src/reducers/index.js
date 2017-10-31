@@ -3,6 +3,6 @@ import articlesReducer from './articlesReducer';
 import openTriggerReducer from './openTriggerReducer';
 
 export default combineReducers({
-  articlesReducer,
+  diagnosisReducer,
   openTriggerReducer
 });

@@ -59,7 +59,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return{
         editHandler: (id, description) => {
-            dispatch({type:"EDIT_ARTICLE", payload: {id, description}})
+            dispatch({type:"EDIT_DIAGNOSIS", payload: {id, description}})
         },   
         openTrigger: () => {
             dispatch({type:"OPEN_TRIGGER", payload: ""})

@@ -34,7 +34,7 @@ function mapDispatchToProps(dispatch){
       dispatch({type:"DISPLAY_DIAGNOSIS", payload: id})
     },
     deleteHandler: id => {
-      dispatch({type:"DELETE_ARTICLE", payload: id})
+      dispatch({type:"DELETE_DIAGNOSIS", payload: id})
     }
   }
 }

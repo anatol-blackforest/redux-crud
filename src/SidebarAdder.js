@@ -41,7 +41,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return{
         addHandler: (diagnosis, description) => {
-            dispatch({type:"ADD_ARTICLE", payload: {diagnosis, description}})
+            dispatch({type:"ADD_DIAGNOSIS", payload: {diagnosis, description}})
         }
     }
 }

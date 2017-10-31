@@ -12,7 +12,7 @@ let initialState = {
 
 export default function articlesReducer(state = initialState, action){
   //поиск диагноза в массиве
-  if(action.type === "SEARCH_ARTICLE"){
+  if(action.type === "SEARCH_DIAGNOSIS"){
       if(action.payload.length){
           const newArray = state.diagnoses.filter((item, index) => {
               return (item.diagnosis.indexOf(action.payload) !== -1 || item.description.indexOf(action.payload) !== -1)
@@ -43,7 +43,7 @@ export default function articlesReducer(state = initialState, action){
           description: diagnose.description
         }
      }
-  }else if(action.type === "DELETE_ARTICLE"){
+  }else if(action.type === "DELETE_DIAGNOSIS"){
     //удаление диагноза
      let newState = state.diagnoses.filter((item) => {
        return item.id !== action.payload
@@ -63,7 +63,7 @@ export default function articlesReducer(state = initialState, action){
         ...state,
         diagnoses: newState
      }
-  }else if(action.type === "EDIT_ARTICLE"){
+  }else if(action.type === "EDIT_DIAGNOSIS"){
     //редактирование диагноза в боковой панели
      let newState = [...state.diagnoses];
      newState = newState.map((item, index) => {
@@ -82,7 +82,7 @@ export default function articlesReducer(state = initialState, action){
           description: action.payload.description
         }
      }
-  }else if(action.type === "ADD_ARTICLE"){
+  }else if(action.type === "ADD_DIAGNOSIS"){
     //добавление нового диагноза
      return{
        ...state,
