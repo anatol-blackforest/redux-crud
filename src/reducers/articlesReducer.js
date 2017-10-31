@@ -37,7 +37,6 @@ export default function articlesReducer(state = initialState, action){
      });
      return{
         ...state,
-        diagnoses:[...state.diagnoses],
         currentDiagnose: {
           id: action.payload,
           diagnosis: diagnose.diagnosis,
