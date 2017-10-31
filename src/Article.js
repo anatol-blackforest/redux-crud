@@ -31,7 +31,7 @@ class Article extends Component {
 function mapDispatchToProps(dispatch){
   return{
     articleHandler: id => {
-      dispatch({type:"DISPLAY_ARTICLE", payload: id})
+      dispatch({type:"DISPLAY_DIAGNOSIS", payload: id})
     },
     deleteHandler: id => {
       dispatch({type:"DELETE_ARTICLE", payload: id})

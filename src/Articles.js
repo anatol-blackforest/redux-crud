@@ -10,7 +10,7 @@ class Articles extends Component {
       }else{
         diagnoses = this.props.diagnoses.map((item, index) => <Article key={item.id} item={item} />);
       }
-
+      
        return <table className="demo">
             <thead>
                 <tr>
@@ -28,9 +28,10 @@ class Articles extends Component {
 }
 
 function mapStateToProps(state){
+    console.log(state)
     return{
-      diagnoses: state.diagnoses,
-      filteredDiagnoses: state.filteredDiagnoses
+      diagnoses: state.articlesReducer.diagnoses,
+      filteredDiagnoses: state.articlesReducer.filteredDiagnoses
     }
 }
 export default connect(mapStateToProps)(Articles);

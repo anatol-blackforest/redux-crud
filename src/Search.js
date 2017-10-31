@@ -17,16 +17,11 @@ class Search extends Component{
         </div>
     }
 }
-function mapStateToProps(state){
-    return{
-
-    }
-}
 function mapDispachToProps(dispatch){
     return{
         searchHandler: (searchValue) => {
-            dispatch({type:"SEARCH_DIAGNOSIS", payload: searchValue})
+            dispatch({type:"SEARCH_ARTICLE", payload: searchValue})
         }
     }
 }
-export default connect(mapStateToProps, mapDispachToProps)(Search)
+export default connect(null, mapDispachToProps)(Search)

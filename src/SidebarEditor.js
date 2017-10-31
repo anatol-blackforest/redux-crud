@@ -24,10 +24,10 @@ class SidebarEditor extends Component {
                 this.props.currentDiagnose.description ? (
                 <div>
                     <h1>{this.props.currentDiagnose.diagnosis}</h1>
-                    <span className="activity" onClick={this.openTrigger}>EDIT {this.props.currentDiagnose.prepareToEdit ? "-" : "+" }</span>
+                    <span className="activity" onClick={this.openTrigger}>EDIT {this.props.prepareToEdit ? "-" : "+" }</span>
                     <div>
                         <p><span>Description:</span></p>
-                        {this.props.currentDiagnose.prepareToEdit ?  (
+                        {this.props.prepareToEdit ?  (
                             <form onSubmit={this.editHandler}>
                                 <textarea ref={description => this.description = description} defaultValue={this.props.currentDiagnose.description} />
                                 <input type="hidden" ref={id => this.id = id} defaultValue={this.props.currentDiagnose.id}/>
@@ -50,8 +50,10 @@ class SidebarEditor extends Component {
 }
 
 function mapStateToProps(state){
+    console.log(state)
     return{
-        currentDiagnose: state.currentDiagnose,
+        currentDiagnose: state.articlesReducer.currentDiagnose,
+        prepareToEdit: state.openTriggerReducer.prepareToEdit,
     }
 }
 function mapDispatchToProps(dispatch){
