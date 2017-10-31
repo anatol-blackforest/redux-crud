@@ -1,5 +1,5 @@
 import data from '../data/data';
-//первичное состояние
+//первичное состояние (список диагнозов)
 let initialState = {
   filteredDiagnoses: [],
   diagnoses: data,
@@ -9,10 +9,9 @@ let initialState = {
     description: ""
   }
 }
-
+//редюсер обработки списка диагнозов
 export default function articlesReducer(state = initialState, action){
   switch(action.type){
-
     //поиск диагноза в массиве
     case "SEARCH_DIAGNOSIS": {
       if(action.payload.length){
@@ -30,7 +29,6 @@ export default function articlesReducer(state = initialState, action){
         }
       }
     }
-
     //отображение подробного диагноза в боковой панели
     case "DISPLAY_DIAGNOSIS": {
        let diagnose;
@@ -48,7 +46,6 @@ export default function articlesReducer(state = initialState, action){
           }
        }
     }
-
     //удаление диагноза
     case "DELETE_DIAGNOSIS": {
        let newState = state.diagnoses.filter((item) => {
@@ -70,9 +67,8 @@ export default function articlesReducer(state = initialState, action){
           diagnoses: newState
        }
     }
-
     //редактирование диагноза в боковой панели
-    case "DELETE_DIAGNOSIS": {
+    case "EDIT_DIAGNOSIS": {
          let newState = [...state.diagnoses];
          newState = newState.map((item, index) => {
            let newItem = {...item}
@@ -91,7 +87,6 @@ export default function articlesReducer(state = initialState, action){
             }
          }
     }
-
     //добавление нового диагноза
     case "ADD_DIAGNOSIS": {
       return{
@@ -106,8 +101,7 @@ export default function articlesReducer(state = initialState, action){
         ]
       }
     }
-
+    //возвращаем начальный стейт
     default: return state
-    
   }
 };

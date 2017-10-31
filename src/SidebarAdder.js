@@ -35,7 +35,7 @@ class SidebarEditor extends Component {
 
 function mapStateToProps(state){
     return{
-        currentDiagnose: state.articlesReducer.currentDiagnose,
+        currentDiagnose: state.diagnosisReducer.currentDiagnose,
     }
 }
 function mapDispatchToProps(dispatch){

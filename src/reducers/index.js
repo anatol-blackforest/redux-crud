@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import articlesReducer from './articlesReducer';
+import diagnosisReducer from './diagnosisReducer';
 import openTriggerReducer from './openTriggerReducer';
 
 export default combineReducers({

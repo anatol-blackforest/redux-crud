@@ -22,6 +22,7 @@ class SidebarEditor extends Component {
        return  <div>
              {
                 this.props.currentDiagnose.description ? (
+                //если диагноз выбран
                 <div>
                     <h1>{this.props.currentDiagnose.diagnosis}</h1>
                     <span className="activity" onClick={this.openTrigger}>EDIT {this.props.prepareToEdit ? "-" : "+" }</span>
@@ -37,6 +38,7 @@ class SidebarEditor extends Component {
                     </div>
                 </div>
                 ) : (
+                //если диагноз не выбран
                 <div>
                     <h1>Diagnosis</h1>
                     <p>
@@ -50,9 +52,8 @@ class SidebarEditor extends Component {
 }
 
 function mapStateToProps(state){
-    console.log(state)
     return{
-        currentDiagnose: state.articlesReducer.currentDiagnose,
+        currentDiagnose: state.diagnosisReducer.currentDiagnose,
         prepareToEdit: state.openTriggerReducer.prepareToEdit,
     }
 }
