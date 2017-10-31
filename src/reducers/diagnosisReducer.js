@@ -15,8 +15,9 @@ export default function articlesReducer(state = initialState, action){
     //поиск диагноза в массиве
     case "SEARCH_DIAGNOSIS": {
       if(action.payload.length){
+      	  let search = action.payload.toLowerCase();
           const newArray = state.diagnoses.filter((item, index) => {
-              return (item.diagnosis.indexOf(action.payload) !== -1 || item.description.indexOf(action.payload) !== -1)
+              return (item.diagnosis.toLowerCase().indexOf(search) !== -1 || item.description.toLowerCase().indexOf(search) !== -1);
           });
           return{
             ...state,
