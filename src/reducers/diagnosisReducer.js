@@ -10,7 +10,7 @@ export default function (state = initialState(), action){
   switch(action.type){
     //поиск диагноза в массиве
     case "SEARCH_DIAGNOSIS": {
-      return searchReducer(state, action);
+       return searchReducer(state, action);
     }
     //отображение подробного диагноза в боковой панели
     case "DISPLAY_DIAGNOSIS": {
@@ -22,11 +22,11 @@ export default function (state = initialState(), action){
     }
     //редактирование диагноза в боковой панели
     case "EDIT_DIAGNOSIS": {
-         return editReducer(state, action);
+       return editReducer(state, action);
     }
     //добавление нового диагноза
     case "ADD_DIAGNOSIS": {
-      return addReducer(state, action);
+       return addReducer(state, action);
     }
     //возвращаем начальный стейт
     default: return state
