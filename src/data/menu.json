@@ -1,0 +1,13 @@
+[
+    {"active": false, "title": "Patient Info"},
+    {"active": true, "title": "Clinical Info"},
+    {"active": false, "title": "Messages"},
+    {"active": false, "title": "Insurance"},
+    {"active": false, "title": "Compliance"},
+    {"active": false, "title": "Events"},
+    {"active": false, "title": "Service plan"},
+    {"active": false, "title": "Documents"},
+    {"active": false, "title": "Integration"},
+    {"active": false, "title": "Equipment"},
+    {"active": false, "title": "Orders"}
+]

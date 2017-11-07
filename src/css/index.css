@@ -173,6 +173,7 @@ border:none;
 cursor:pointer;
 position:relative;
 top:5px;
+outline:none;
 }
 
 .demo {
