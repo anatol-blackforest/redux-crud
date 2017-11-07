@@ -5,7 +5,7 @@ class SidebarEditor extends Component {
    constructor(props){
        super(props);
        this.editHandler = this.editHandler.bind(this);
-       this.openTrigger = this.openTrigger.bind(this);
+       this.editTrigger = this.editTrigger.bind(this);
    }
    //редактируем запись в боковой панели
    editHandler(e){
@@ -15,8 +15,8 @@ class SidebarEditor extends Component {
        }
    }
    //открываем-закрываем форму редактирования
-   openTrigger(){
-       this.props.openTrigger()
+   editTrigger(){
+       this.props.editTrigger()
    }
    render(){
        return  <div>
@@ -25,7 +25,7 @@ class SidebarEditor extends Component {
                 //если диагноз выбран
                 <div>
                     <h1>{this.props.currentDiagnose.diagnosis}</h1>
-                    <span className="activity" onClick={this.openTrigger}>EDIT {this.props.prepareToEdit ? "-" : "+" }</span>
+                    <span className="activity" onClick={this.editTrigger}>EDIT {this.props.prepareToEdit ? "-" : "+" }</span>
                     <div>
                         <p><span>Description:</span></p>
                         {this.props.prepareToEdit ?  (
@@ -54,7 +54,7 @@ class SidebarEditor extends Component {
 function mapStateToProps(state){
     return{
         currentDiagnose: state.diagnosisReducer.currentDiagnose,
-        prepareToEdit: state.openTriggerReducer.prepareToEdit,
+        prepareToEdit: state.editTriggerReducer.prepareToEdit,
     }
 }
 function mapDispatchToProps(dispatch){
@@ -62,8 +62,8 @@ function mapDispatchToProps(dispatch){
         editHandler: (id, description) => {
             dispatch({type:"EDIT_DIAGNOSIS", payload: {id, description}})
         },   
-        openTrigger: () => {
-            dispatch({type:"OPEN_TRIGGER", payload: ""})
+        editTrigger: () => {
+            dispatch({type:"EDIT_TRIGGER", payload: ""})
         }   
     }
 }

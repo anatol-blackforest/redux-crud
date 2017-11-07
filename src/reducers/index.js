@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import diagnosisReducer from './diagnosisReducer';
-import openTriggerReducer from './openTriggerReducer';
+import editTriggerReducer from './editTriggerReducer';
 
 export default combineReducers({
   diagnosisReducer,
-  openTriggerReducer
+  editTriggerReducer
 });

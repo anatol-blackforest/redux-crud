@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function(){
-    return <a class="plus" href="#"></a>
+    return <a href="." className="plus">Add</a>
 }
