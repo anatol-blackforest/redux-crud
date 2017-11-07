@@ -5,6 +5,7 @@ export default function (state, action){
             let search = action.payload.toLowerCase();
             return{
                 ...state,
+                isFiltered: true,
                 filteredDiagnoses: state.diagnoses.filter((item, index) => {
                     return (item.diagnosis.toLowerCase().indexOf(search) !== -1 || item.description.toLowerCase().indexOf(search) !== -1);
                 })
@@ -12,6 +13,7 @@ export default function (state, action){
         }else{
             return{
                 ...state,
+                isFiltered: false,
                 filteredDiagnoses: []
             }
         }

@@ -1,13 +1,16 @@
 //удаление диагноза
 export default function (state, action){
     if(action.type  === "DELETE_DIAGNOSIS"){
-          let newState = state.diagnoses.filter((item) => {
+          let filterFunc = (item) => {
             return item.id !== action.payload
-          });
+          };
+          const newState = state.diagnoses.filter(filterFunc);
+          const newFilteredState = state.filteredDiagnoses.filter(filterFunc);
           if(state.currentDiagnose.id === action.payload){
               return{
                   ...state,
                   diagnoses: newState,
+                  filteredDiagnoses: newFilteredState,
                   currentDiagnose: {
                     id: null,
                     diagnosis: "",
@@ -17,6 +20,7 @@ export default function (state, action){
           }
           return{
               ...state,
+              filteredDiagnoses: newFilteredState,
               diagnoses: newState
           }
     }  
