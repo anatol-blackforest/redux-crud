@@ -262,6 +262,23 @@ width:100px;
     line-height: 30px;
     outline: none;
 }
+.modal{
+	position:absolute;
+	z-index:1000;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	background:rgba(61, 186, 252, 0.5)
+}
+.modal .adder{
+	width:400px;
+	margin:200px auto;
+	padding:20px;
+	border-radius:5px;
+	color:#fff;
+	background: #646464;
+}
 
 @media screen and (min-width: 1200px){
 	.main_column{
