@@ -5,7 +5,7 @@ import SidebarContainer from '../containers/SidebarContainer';
 import AddButtonContainer from '../containers/AddButtonContainer';
 import AddWindowContainer from '../containers/AddWindowContainer';
 //все приложение (обе панели с хедером)
-export default function(props){
+export default function(){
     return <div className="app">
         <Header />
         <SidebarContainer />

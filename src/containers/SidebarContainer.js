@@ -30,7 +30,6 @@ class SidebarContainer extends Component {
         />
    }
 }
-
 function mapStateToProps(state){
     return{
         currentDiagnose: state.diagnosisReducer.currentDiagnose,

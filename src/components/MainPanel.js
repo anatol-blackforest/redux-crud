@@ -2,7 +2,7 @@ import React from 'react';
 import SearchContainer from '../containers/SearchContainer';
 import ArticlesContainer from '../containers/ArticlesContainer';
 //центральная панель
-export default function(props){
+export default function(){
     return  <div className="container">
         <div className="content">
             <div className="breadcrumbs">

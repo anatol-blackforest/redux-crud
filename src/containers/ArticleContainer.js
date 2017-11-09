@@ -26,7 +26,6 @@ class ArticleContainer extends Component {
        />
    }
 }
-
 function mapDispatchToProps(dispatch){
   return{
     articleHandler: id => {
