@@ -1,7 +1,9 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'
-//добавляем новый диагноз из боковой панели
-class SidebarEditor extends Component {
+import AddWindow from '../components/AddWindow';
+
+//добавляем новый диагноз в модальном окне
+class AddWindowContainer extends Component {
    constructor(props){
        super(props);
        this.addHandler = this.addHandler.bind(this);
@@ -24,23 +26,14 @@ class SidebarEditor extends Component {
        this.props.closeWindow();
    }
    render(){
-       return  <div onClick={this.closeWindow} style={this.props.isOpened ? {display:"block"} : {display:"none"}} className="modal">
-            <div onClick={this.stprop} className="adder">
-                <p><span>Add new diagnosis: </span></p>
-                    <form onSubmit={this.addHandler}>
-                        <input 
-                            type="text" 
-                            ref={diagnosis => this.diagnosis = diagnosis} 
-                            placeholder="Diagnosis"
-                        />
-                        <textarea 
-                            ref={description => this.description = description} 
-                            placeholder="Description" 
-                        />
-                        <input type="Submit" defaultValue="ADD" />
-                    </form>
-            </div>
-      </div>
+       return  <AddWindow 
+            closeWindow={this.closeWindow} 
+            isOpened={this.props.isOpened} 
+            stprop={this.stprop}
+            addHandler={this.addHandler}
+            diagnosis={diagnosis => this.diagnosis = diagnosis}
+            description={description => this.description = description} 
+       />
    }
 }
 
@@ -61,4 +54,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SidebarEditor);
+export default connect(mapStateToProps, mapDispatchToProps)(AddWindowContainer);

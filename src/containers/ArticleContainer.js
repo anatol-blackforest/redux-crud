@@ -1,7 +1,8 @@
 import React, {Component} from 'react'; 
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import Article from '../components/Article';
 //вывод 1 диагноза в списке всех диагнозов в главной панели
-class Article extends Component {
+class ArticleContainer extends Component {
    constructor(props){
      super(props);
      this.articleHandler = this.articleHandler.bind(this);
@@ -17,14 +18,12 @@ class Article extends Component {
    }
    render(){
        let id = this.props.item.id;
-       return <tr>
-          <td onClick={() => this.articleHandler(id)}>
-            {this.props.item.diagnosis}
-          </td>
-          <td onClick={() => this.articleHandler(id)}>{this.props.item.description}</td>
-          <td>-</td>
-          <td><a onClick={() => this.deleteHandler(id)} className="close" >x</a></td>
-      </tr>
+       return <Article
+          articleHandler={() => this.articleHandler(id)} 
+          deleteHandler={() => this.deleteHandler(id)} 
+          diagnosis={this.props.item.diagnosis}
+          description={this.props.item.description}
+       />
    }
 }
 
@@ -39,4 +38,4 @@ function mapDispatchToProps(dispatch){
   }
 }
 
-export default connect(null, mapDispatchToProps)(Article);
+export default connect(null, mapDispatchToProps)(ArticleContainer);

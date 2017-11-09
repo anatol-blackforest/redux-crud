@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-class AddButton extends Component{
+import AddButton from '../components/AddButton';
+//кнопка добавления диагноза
+class AddButtonContainer extends Component{
     constructor(props){
         super(props);
         this.openWindow = this.openWindow.bind(this);
@@ -11,13 +12,7 @@ class AddButton extends Component{
         this.props.openWindow();
     }
     render(){
-        return <a href="." onClick={this.openWindow} className="plus">Add</a>
-    }
-}
-
-function mapStateToProps(){
-    return {
-
+        return <AddButton openWindow={this.openWindow} />
     }
 }
 
@@ -29,4 +24,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddButton);
+export default connect(null, mapDispatchToProps)(AddButtonContainer);

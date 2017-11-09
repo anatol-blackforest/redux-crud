@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Search from '../components/Search';
 //поиск диагноза (центральная панель)
-class Search extends Component{
+class SearchContainer extends Component{
     constructor(props){
         super(props);
         this.searchHandler = this.searchHandler.bind(this);
@@ -16,11 +17,11 @@ class Search extends Component{
         this.props.searchHandler("");
     }
     render(){
-        return <div className="row adder">
-            <form>
-                <input ref={search=> this.search = search} onChange={this.searchHandler} type="text" placeholder="Search Diagnoses" /><button onClick={this.emptyHandler}></button>
-            </form>
-        </div>
+        return <Search
+          search={search=> this.search = search} 
+          searchHandler={this.searchHandler} 
+          emptyHandler={this.emptyHandler}
+        />
     }
 }
 function mapDispachToProps(dispatch){
@@ -30,4 +31,4 @@ function mapDispachToProps(dispatch){
         }
     }
 }
-export default connect(null, mapDispachToProps)(Search)
+export default connect(null, mapDispachToProps)(SearchContainer)
