@@ -15,7 +15,6 @@ class AddButtonContainer extends Component{
         return <AddButton openWindow={this.openWindow} />
     }
 }
-
 function mapDispatchToProps(dispatch){
     return{
         openWindow: () => {
@@ -23,5 +22,4 @@ function mapDispatchToProps(dispatch){
         }
     }
 }
-
 export default connect(null, mapDispatchToProps)(AddButtonContainer);

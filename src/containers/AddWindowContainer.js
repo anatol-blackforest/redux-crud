@@ -1,7 +1,6 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'
 import AddWindow from '../components/AddWindow';
-
 //добавляем новый диагноз в модальном окне
 class AddWindowContainer extends Component {
    constructor(props){
@@ -36,7 +35,6 @@ class AddWindowContainer extends Component {
        />
    }
 }
-
 function mapStateToProps(state){
     return{
         currentDiagnose: state.diagnosisReducer.currentDiagnose,
@@ -53,5 +51,4 @@ function mapDispatchToProps(dispatch){
         }
     }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(AddWindowContainer);

@@ -19,7 +19,6 @@ class ArticlesContainer extends Component {
         return <Articles diagnoses={diagnoses} />
    }
 }
-
 function mapStateToProps(state){
     return{
       diagnoses: state.diagnosisReducer.diagnoses,
