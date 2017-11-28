@@ -11,7 +11,7 @@ class AddWindowContainer extends Component {
    }
    addHandler(e){
        e.preventDefault();
-       if(this.diagnosis.value && this.description.value){
+       if(this.diagnosis.value.trim() && this.description.value.trim()){
             this.props.addHandler(this.diagnosis.value, this.description.value);
             this.props.closeWindow();
             this.addForm.reset();
