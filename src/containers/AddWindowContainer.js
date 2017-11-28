@@ -14,7 +14,7 @@ class AddWindowContainer extends Component {
        if(this.diagnosis.value && this.description.value){
             this.props.addHandler(this.diagnosis.value, this.description.value);
             this.props.closeWindow();
-            this.form.reset();
+            this.addForm.reset();
        }
    }
    stprop(e){
@@ -29,7 +29,7 @@ class AddWindowContainer extends Component {
             isOpened={this.props.isOpened} 
             stprop={this.stprop}
             addHandler={this.addHandler}
-            form={form => this.form = form}
+            addForm={addForm => this.addForm = addForm}
             diagnosis={diagnosis => this.diagnosis = diagnosis}
             description={description => this.description = description} 
        />

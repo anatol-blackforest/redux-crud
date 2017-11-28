@@ -4,7 +4,7 @@ export default function(props){
     return <div onClick={props.closeWindow} style={props.isOpened ? {display:"block"} : {display:"none"}} className="modal">
                 <div onClick={props.stprop} className="adder">
                         <p><span>Add new diagnosis: </span></p>
-                        <form onSubmit={props.addHandler} ref={props.form} >
+                        <form onSubmit={props.addHandler} ref={props.addForm} >
                             <input 
                                 type="text" 
                                 ref={props.diagnosis} 
