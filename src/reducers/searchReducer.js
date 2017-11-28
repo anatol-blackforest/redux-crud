@@ -1,7 +1,7 @@
 //поиск диагноза в массиве
 export default function (state, action){
   if(action.type  === "SEARCH_DIAGNOSIS"){
-        if(action.payload.length){
+        if(action.payload && action.payload.length){
             let search = action.payload.toLowerCase();
             return{
                 ...state,

@@ -2,9 +2,9 @@ import React from 'react';
 //рендер поиска (центральная панель)
 export default function(props){
     return <div className="row adder">
-        <form>
+        <form ref={props.searchForm} >
             <input 
-                ref={props.search} 
+                ref={props.searchInput} 
                 onChange={props.searchHandler} 
                 type="text" 
                 placeholder="Search Diagnoses" 

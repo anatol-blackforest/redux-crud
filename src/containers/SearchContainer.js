@@ -9,16 +9,17 @@ class SearchContainer extends Component{
         this.emptyHandler = this.emptyHandler.bind(this);
     }
     searchHandler(){
-        this.props.searchHandler(this.search.value);
+        this.props.searchHandler(this.searchInput.value);
     }
     emptyHandler(e){
         e.preventDefault();
-        this.search.value = "";
-        this.props.searchHandler("");
+        this.searchForm.reset();
+        this.props.searchHandler(null);
     }
     render(){
         return <Search
-          search={search=> this.search = search} 
+          searchForm={searchForm => this.searchForm = searchForm} 
+          searchInput={searchInput => this.searchInput = searchInput} 
           searchHandler={this.searchHandler} 
           emptyHandler={this.emptyHandler}
         />
