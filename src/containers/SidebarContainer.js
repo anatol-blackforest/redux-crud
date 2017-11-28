@@ -11,7 +11,7 @@ class SidebarContainer extends Component {
    //редактируем запись в боковой панели
    editHandler(e){
        e.preventDefault();
-       if(this.description.value){
+       if(this.description.value.trim()){
            this.props.editHandler(this.id.value, this.description.value);
        }
    }
