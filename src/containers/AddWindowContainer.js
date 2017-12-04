@@ -14,7 +14,7 @@ class AddWindowContainer extends Component {
        if(this.diagnosis.value.trim() && this.description.value.trim()){
             this.props.addHandler(this.diagnosis.value, this.description.value);
             this.props.closeWindow();
-            this.addForm.reset();
+            e.target.reset();
        }
    }
    stprop(e){
@@ -29,7 +29,6 @@ class AddWindowContainer extends Component {
             isOpened={this.props.isOpened} 
             stprop={this.stprop}
             addHandler={this.addHandler}
-            addForm={addForm => this.addForm = addForm}
             diagnosis={diagnosis => this.diagnosis = diagnosis}
             description={description => this.description = description} 
        />

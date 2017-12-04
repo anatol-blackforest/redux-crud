@@ -8,8 +8,8 @@ class SearchContainer extends Component{
         this.searchHandler = this.searchHandler.bind(this);
         this.emptyHandler = this.emptyHandler.bind(this);
     }
-    searchHandler(){
-        this.props.searchHandler(this.searchInput.value);
+    searchHandler(e){
+        this.props.searchHandler(e.target.value);
     }
     emptyHandler(e){
         e.preventDefault();
@@ -19,7 +19,6 @@ class SearchContainer extends Component{
     render(){
         return <Search
           searchForm={searchForm => this.searchForm = searchForm} 
-          searchInput={searchInput => this.searchInput = searchInput} 
           searchHandler={this.searchHandler} 
           emptyHandler={this.emptyHandler}
         />
