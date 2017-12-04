@@ -166,7 +166,7 @@ outline:none;
 width:235px;
 margin:0 20px;
 }
-.row.adder form button{
+.row.adder form input[type="reset"]{
 background: url("../img/+m.png") no-repeat 0 50%;
 width:20px;
 height:20px;
