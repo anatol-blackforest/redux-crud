@@ -1,5 +1,5 @@
 //action creators
-import {EDIT_DIAGNOSIS, SEARCH_DIAGNOSIS, DELETE_DIAGNOSIS, DISPLAY_DIAGNOSIS, ADD_DIAGNOSIS, MODAL_TRIGGER} from '../data/constants'
+import {EDIT_DIAGNOSIS, SEARCH_DIAGNOSIS, DELETE_DIAGNOSIS, DISPLAY_DIAGNOSIS, ADD_DIAGNOSIS, MODAL_TRIGGER, EDIT_TRIGGER} from '../data/constants'
 //экшн редактирования в сайдбаре
 export function editAction(id, description){
     return {type: EDIT_DIAGNOSIS, payload: {id, description}}
@@ -23,4 +23,8 @@ export function addAction(diagnosis, description){
 //экшн модального окна
 export function openWindowAction(windowState){
     return  {type: MODAL_TRIGGER, payload: windowState}
+}
+//экшн видимости формы редактирования
+export function editTriggerAction(){
+    return  {type: EDIT_TRIGGER}
 }
