@@ -1,4 +1,4 @@
-import {SEARCH_DIAGNOSIS} from '../constants'
+import {SEARCH_DIAGNOSIS} from '../data/constants'
 //поиск диагноза в массиве
 export default function (state, action){
   if(action.type === SEARCH_DIAGNOSIS){

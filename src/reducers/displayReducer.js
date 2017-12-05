@@ -1,4 +1,4 @@
-import {DISPLAY_DIAGNOSIS} from '../constants'
+import {DISPLAY_DIAGNOSIS} from '../data/constants'
 //отображение подробного диагноза в боковой панели
 export default function (state, action){
     if(action.type === DISPLAY_DIAGNOSIS){

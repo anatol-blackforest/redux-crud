@@ -1,4 +1,4 @@
-import {MODAL_TRIGGER} from '../constants'
+import {MODAL_TRIGGER} from '../data/constants'
 const data = {isOpened: false}
 //редюсер видимости формы редактирования
 export default function (state = data, action){

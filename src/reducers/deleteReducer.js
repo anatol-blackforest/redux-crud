@@ -1,4 +1,4 @@
-import {DELETE_DIAGNOSIS} from '../constants'
+import {DELETE_DIAGNOSIS} from '../data/constants'
 //удаление диагноза
 export default function (state, action){
     if(action.type === DELETE_DIAGNOSIS){

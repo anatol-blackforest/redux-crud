@@ -1,4 +1,4 @@
-import {EDIT_DIAGNOSIS, SEARCH_DIAGNOSIS, DELETE_DIAGNOSIS, DISPLAY_DIAGNOSIS, ADD_DIAGNOSIS} from '../constants';
+import {EDIT_DIAGNOSIS, SEARCH_DIAGNOSIS, DELETE_DIAGNOSIS, DISPLAY_DIAGNOSIS, ADD_DIAGNOSIS} from '../data/constants';
 import searchReducer from './searchReducer';
 import displayReducer from './displayReducer';
 import deleteReducer from './deleteReducer';

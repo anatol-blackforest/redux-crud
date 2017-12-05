@@ -1,4 +1,4 @@
-import {EDIT_DIAGNOSIS} from '../constants'
+import {EDIT_DIAGNOSIS} from '../data/constants'
 //редактирование диагноза в боковой панели
 export default function (state, action){
     if(action.type === EDIT_DIAGNOSIS){
