@@ -31,4 +31,4 @@ export default function (state = initialState(), action){
     //возвращаем начальный стейт
     default: return state
   }
-};
+}

@@ -24,7 +24,7 @@ class SearchContainer extends Component{
 }
 function mapDispachToProps(dispatch){
     return{
-        searchHandler: (searchValue) => {
+        searchHandler: searchValue => {
             dispatch(searchAction(searchValue))
         }
     }
