@@ -1,6 +1,7 @@
+import {SEARCH_DIAGNOSIS} from '../constants'
 //поиск диагноза в массиве
 export default function (state, action){
-  if(action.type  === "SEARCH_DIAGNOSIS"){
+  if(action.type === SEARCH_DIAGNOSIS){
         if(action.payload && action.payload.length){
             let search = action.payload.toLowerCase();
             return{

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Search from '../components/Search';
+import { searchAction } from '../actions';
 //поиск диагноза (центральная панель)
 class SearchContainer extends Component{
     constructor(props){
@@ -24,7 +25,7 @@ class SearchContainer extends Component{
 function mapDispachToProps(dispatch){
     return{
         searchHandler: (searchValue) => {
-            dispatch({type:"SEARCH_DIAGNOSIS", payload: searchValue})
+            dispatch(searchAction(searchValue))
         }
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AddButton from '../components/AddButton';
+import { openWindowAction } from '../actions';
 //кнопка добавления диагноза
 class AddButtonContainer extends Component{
     constructor(props){
@@ -18,7 +19,7 @@ class AddButtonContainer extends Component{
 function mapDispatchToProps(dispatch){
     return{
         openWindow: () => {
-           dispatch({type: "MODAL_TRIGGER", payload: true})
+           dispatch(openWindowAction(true))
         }
     }
 }

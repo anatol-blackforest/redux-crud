@@ -1,6 +1,7 @@
+import {DELETE_DIAGNOSIS} from '../constants'
 //удаление диагноза
 export default function (state, action){
-    if(action.type  === "DELETE_DIAGNOSIS"){
+    if(action.type === DELETE_DIAGNOSIS){
           let filterFunc = (item) => {
             return item.id !== action.payload
           };

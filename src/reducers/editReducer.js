@@ -1,6 +1,7 @@
+import {EDIT_DIAGNOSIS} from '../constants'
 //редактирование диагноза в боковой панели
 export default function (state, action){
-    if(action.type  === "EDIT_DIAGNOSIS"){
+    if(action.type === EDIT_DIAGNOSIS){
           let newState = [...state.diagnoses];
           let newFilteredState = [...state.filteredDiagnoses];
           let mapFunc = (item, index) => {

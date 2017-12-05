@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux';
 import Article from '../components/Article';
+import { displayAction, deleteAction } from '../actions';
 //вывод 1 диагноза в списке всех диагнозов в главной панели
 class ArticleContainer extends Component {
    constructor(props){
@@ -29,10 +30,10 @@ class ArticleContainer extends Component {
 function mapDispatchToProps(dispatch){
   return{
     articleHandler: id => {
-      dispatch({type:"DISPLAY_DIAGNOSIS", payload: id})
+      dispatch(displayAction(id))
     },
     deleteHandler: id => {
-      dispatch({type:"DELETE_DIAGNOSIS", payload: id})
+      dispatch(deleteAction(id))
     }
   }
 }

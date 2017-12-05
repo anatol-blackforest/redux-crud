@@ -1,31 +1,31 @@
+import {EDIT_DIAGNOSIS, SEARCH_DIAGNOSIS, DELETE_DIAGNOSIS, DISPLAY_DIAGNOSIS, ADD_DIAGNOSIS} from '../constants';
 import searchReducer from './searchReducer';
 import displayReducer from './displayReducer';
 import deleteReducer from './deleteReducer';
 import editReducer from './editReducer';
 import addReducer from './addReducer';
 import initialState from './initialState';
-
 //редюсер обработки списка диагнозов
 export default function (state = initialState(), action){
   switch(action.type){
     //поиск диагноза в массиве
-    case "SEARCH_DIAGNOSIS": {
+    case SEARCH_DIAGNOSIS: {
        return searchReducer(state, action);
     }
     //отображение подробного диагноза в боковой панели
-    case "DISPLAY_DIAGNOSIS": {
+    case DISPLAY_DIAGNOSIS: {
        return displayReducer(state, action);
     }
     //удаление диагноза
-    case "DELETE_DIAGNOSIS": {
+    case DELETE_DIAGNOSIS: {
        return deleteReducer(state, action);
     }
     //редактирование диагноза в боковой панели
-    case "EDIT_DIAGNOSIS": {
+    case EDIT_DIAGNOSIS: {
        return editReducer(state, action);
     }
     //добавление нового диагноза
-    case "ADD_DIAGNOSIS": {
+    case ADD_DIAGNOSIS: {
        return addReducer(state, action);
     }
     //возвращаем начальный стейт

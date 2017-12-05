@@ -1,6 +1,7 @@
+import {DISPLAY_DIAGNOSIS} from '../constants'
 //отображение подробного диагноза в боковой панели
 export default function (state, action){
-    if(action.type  === "DISPLAY_DIAGNOSIS"){
+    if(action.type === DISPLAY_DIAGNOSIS){
           let diagnose;
           state.diagnoses.forEach((item) => {
             if (item.id === action.payload){

@@ -1,6 +1,7 @@
+import {ADD_DIAGNOSIS} from '../constants'
 //добавление нового диагноза
 export default function (state, action){
-    if(action.type  === "ADD_DIAGNOSIS"){
+    if(action.type === ADD_DIAGNOSIS){
           return {
                 ...state,
                 diagnoses:[

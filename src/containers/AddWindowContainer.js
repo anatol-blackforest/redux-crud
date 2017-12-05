@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'
 import AddWindow from '../components/AddWindow';
+import { openWindowAction, addAction } from '../actions';
 //добавляем новый диагноз в модальном окне
 class AddWindowContainer extends Component {
    constructor(props){
@@ -43,10 +44,10 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return{
         addHandler: (diagnosis, description) => {
-            dispatch({type:"ADD_DIAGNOSIS", payload: {diagnosis, description}})
+            dispatch(addAction(diagnosis, description))
         },
         closeWindow: () => {
-           dispatch({type: "MODAL_TRIGGER", payload: false});
+           dispatch(openWindowAction(false));
         }
     }
 }
